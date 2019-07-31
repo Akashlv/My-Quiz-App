@@ -1,0 +1,120 @@
+body {
+    background-color: #eeeeee;
+}
+
+.WebContainer{
+    width:100%;
+    min-width:1000px;
+    height:auto;
+} 
+
+.grid {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 500px 50px 100px;
+    border-radius: 50px;
+    border: 6px solid #cbcbcbfd;
+    box-shadow: 10px 15px 5px #cbcbcb;
+}
+
+.grid h1 {
+    width: 900px ;
+    height: 20px ;
+    font-family: "sans-serif";
+    background-color:steelblue;
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 60px;
+    border-radius: 50px;
+}
+
+#score {
+    color: #5A6772;
+    text-align: center;
+    font-size: 30px;
+}
+
+.grid #question {
+    font-family: "monospace";
+    text-align: left;
+    font-size: 25px;
+    color: rgb(56, 116, 168);
+}
+
+.options {
+    margin-top: 20px;           
+}
+
+#choice1, #choice2, #choice3, #choice4 {
+    background-color: #f4f7f8;
+    height: 40px ;
+    width: 800px;
+    font-size: 20px;
+    color: rgb(32, 2, 2);
+    border: 1px solid #1D3C6A;
+    border-radius: 50px;
+    margin: 10px 40px 10px 0px;
+    padding: 10px 10px;
+    text-align: left;
+}
+
+#choice1:hover, #choice2:hover, #choice3:hover, #choice4:hover {
+    cursor: pointer;
+    background-color: skyblue;
+}
+
+#choice1:focus, #choice2:focus, #choice3:focus, #choice4:focus {
+    outline: 0;
+}
+
+#start {
+    background-color:darkmagenta;
+    height: 40px ;
+    width: 800px;
+    font-size: 20px;
+    color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 30px 70px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#finish {
+    background-color:steelblue;
+    height: 40px ;
+    width: 800px;
+    font-size: 20px;
+    color: rgb(32, 2, 2);
+    border: 1px solid #1D3C6A;
+    border-radius: 50px;
+    margin: 10px 10px 10px 70px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#start:hover,#finish:hover{
+    cursor: pointer;
+    background-color: green;
+}
+
+.btn-group button {
+    height: 25px;
+    width: 25px;
+    background-color: olivedrab; /* Green background */
+    border: 1px solid black; /* Green border */
+    border-radius: 50%;
+    margin: 3px;
+    color: white; /* White text */
+    padding: 1px 2px 3px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+#progress {
+    color: #2b2b2b;
+    font-size: 18px;
+}

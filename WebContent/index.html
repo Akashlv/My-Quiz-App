@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="WebContainer">
+		<div class="grid">
+			<div id="quiz">
+				<h1>My Quiz Application</h1>
+				<hr width="1000" style="margin-bottom: 10px">
+				<h3 id="question"></h3>
+
+
+				<div id="options">
+
+					<button id="choice1" value='null' onclick="Choice1Checker(this)"></button>
+					<button id="choice2" value='null' onclick="Choice2Checker(this)"></button>
+					<button id="choice3" value='null' onclick="Choice3Checker(this)"></button>
+					<button id="choice4" value='null' onclick="Choice4Checker(this)"></button>
+
+				</div>
+
+				<hr width="1000" style="margin-bottom: 20px">
+				<!-- <button id="next" onclick="nextValue()">Next</button>
+				<button id="Previous" onclick="previousValue()">Previous</button> -->
+				<h2 id="answer"></h2>
+
+				<footer>
+					<div class="btn-group" id="pageButtons"></div>
+					<h3 id="result"></h3>
+					<button id="finish" onclick="window.location = 'finish.html'">Finish</button>
+				</footer>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+		var i = 0;
+		var array;
+		var questions = ["What is your name", "Who are you",
+			"What are you doing", "How can i help you"];
+		var option1 = ["Akash", "Men", "Working", "Recharge My Mobile"];
+		var option2 = ["Ravish", "Women", "Eating", "Wash my clothes"];
+		var option3 = ["Veeraj", "Trans Gender", "Roaming", "Tez me 1000"];
+		var option4 = ["Bharath", "Not specified", "Nothing", "Gift me a Ford Mustang"];
+		var answer = ["Akash", "Men", "Working", "Tez me 1000"];
+		var score = 0;
+
+
+		document.getElementById("question").innerHTML = (i + 1) + ". " + questions[0];
+		document.getElementById("choice1").innerHTML = "A) ".bold() + option1[0].bold();
+		document.getElementById("choice2").innerHTML = "B) ".bold() + option2[0].bold();
+		document.getElementById("choice3").innerHTML = "C) ".bold() + option3[0].bold();
+		document.getElementById("choice4").innerHTML = "D) ".bold() + option4[0].bold();
+
+
+
+		var pages = questions.length;
+		var pageButtons = $('#pageButtons');
+		for (var i = 0; i < pages; i++) {
+			pageButtons.append('<button class="btn-group" id="button' + i + '" value="Random' + i + '" onclick="question(' + i + ')">' + (i + 1) + '</button>');
+		}
+
+
+
+		function Choice1Checker(objButton) {
+			var selectedAns = document.getElementById("choice1").value = option1[i];
+			var correctAns = answer[i];
+
+			if (selectedAns == correctAns) {
+				score++;
+				document.getElementById("choice1").style.backgroundColor = "lightblue";
+			} else {
+				document.getElementById("choice1").style.backgroundColor = "red";
+			}
+		}
+
+		function Choice2Checker(objButton) {
+			var selectedAns = document.getElementById("choice2").value = option2[i];
+			var correctAns = answer[i];
+		
+			if (selectedAns == correctAns) {
+				score++;
+				document.getElementById("choice2").style.backgroundColor = "lightblue";		
+			} else {
+				document.getElementById("choice2").style.backgroundColor = "red";
+			}
+		}
+
+		function Choice3Checker(objButton) {
+			var selectedAns = document.getElementById("choice3").value = option3[i];
+			var correctAns = answer[i];
+
+			if (selectedAns == correctAns) {
+				score++;
+				document.getElementById("choice3").style.backgroundColor = "lightblue";
+			} else {
+				document.getElementById("choice3").style.backgroundColor = "red";
+			}
+		}
+
+		function Choice4Checker(objButton) {
+			var selectedAns = document.getElementById("choice4").value = option4[i];
+			var correctAns = answer[i];
+
+			if (selectedAns == correctAns) {
+				score++;
+				document.getElementById("choice4").style.backgroundColor = "lightblue";
+			} else {
+				document.getElementById("choice4").style.backgroundColor = "red";
+			}
+		}
+
+		localStorage.setItem("score",score);
+
+		function question(questionNumber) {
+		
+			document.getElementById
+			
+			i = questionNumber;
+			document.getElementById("question").innerHTML = (i + 1) + ". "
+				+ questions[i];
+
+			document.getElementById("choice1").innerHTML = "A) ".bold() + option1[i].bold();
+			document.getElementById("choice2").innerHTML = "B) ".bold() + option2[i].bold();
+			document.getElementById("choice3").innerHTML = "C) ".bold() + option3[i].bold();
+			document.getElementById("choice4").innerHTML = "D) ".bold() + option4[i].bold();
+
+		}
+
+		function timeCounter() {
+			var counter = 5;
+			var interval = setInterval(function () {
+				counter--;
+				document.getElementById("countdowntimer").textContent = counter;
+				if (counter == 0) {
+					// Display a login box
+					clearInterval(interval);
+					nextValue();
+				}
+			}, 1000);
+		}
+
+		function finish() {
+			document.getElementById("result").innerHTML = score;
+		}
+
+	</script>
+</body>
+
+</html>
